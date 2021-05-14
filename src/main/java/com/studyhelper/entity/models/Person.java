@@ -1,37 +1,42 @@
-package com.studyhelper.models;
+package com.studyhelper.entity.models;
 
 
-import lombok.Data;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Collections;
 
-
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table
-public class User implements UserDetails {
+public class Person implements UserDetails {
     @Id
     @GeneratedValue
     private Long id;
 
     @Column
     private String email;
+
     @Column
     private String password;
-    @Column
+
+    @Column(unique = true)
     private String username;
+
     @Column
     private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getAuthorities();
+        return Collections.emptyList();
     }
 
     @Override

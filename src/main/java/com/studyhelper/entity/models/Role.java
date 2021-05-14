@@ -1,4 +1,4 @@
-package com.studyhelper.models;
+package com.studyhelper.entity.models;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.Set;

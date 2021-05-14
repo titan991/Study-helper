@@ -1,4 +1,4 @@
-package com.studyhelper.models;
+package com.studyhelper.entity.models;
 
 public enum Permission {
     USER_READ("user:read"),
