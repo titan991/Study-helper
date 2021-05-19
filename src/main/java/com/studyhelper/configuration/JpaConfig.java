@@ -17,7 +17,7 @@ public class JpaConfig {
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.username("postgres");
-        dataSourceBuilder.password("123");
+        dataSourceBuilder.password("postgres");
         dataSourceBuilder.url("jdbc:postgresql://localhost:5432/studyhelper");
         return dataSourceBuilder.build();
     }

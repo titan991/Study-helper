@@ -11,7 +11,9 @@ public class PersonConverter {
     return form -> {
       Person person = new Person();
       person.setUsername(form.getUsername());
-      person.setEmail(form.getEmail());
+      person.setFullname(form.getFullname());
+//      person.setId_group(form.getId_group());
+ //     person.setId_chair(form.getId_chair());
       return person;
     };
   }

@@ -22,14 +22,14 @@ public class Person implements UserDetails {
     @GeneratedValue
     private Long id;
 
-    @Column
-    private String email;
+    @Column(unique = true)
+    private String username;
 
     @Column
     private String password;
 
-    @Column(unique = true)
-    private String username;
+    @Column
+    private String fullname;
 
     @Column
     private Role role;
@@ -38,6 +38,7 @@ public class Person implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
     }
+
 
     @Override
     public boolean isAccountNonExpired() {

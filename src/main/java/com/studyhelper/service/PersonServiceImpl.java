@@ -3,9 +3,7 @@ package com.studyhelper.service;
 import com.studyhelper.entity.converter.PersonConverter;
 import com.studyhelper.entity.form.PersonForm;
 import com.studyhelper.entity.models.Person;
-import com.studyhelper.entity.models.Role;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -39,7 +37,6 @@ public class PersonServiceImpl implements UserDetailsService, PersonService {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Person not converted");
         }
 
-        person.setRole(Role.STUDENT);
         person.setPassword(passwordEncoder.encode(personForm.getPassword()));
 
         return personRepository.save(person).getId();
