@@ -2,7 +2,7 @@ package com.studyhelper.service;
 
 import com.studyhelper.entity.converter.GroupConverter;
 import com.studyhelper.entity.form.GroupForm;
-import com.studyhelper.entity.models.Groupperson;
+import com.studyhelper.entity.models.EducationalGroup;
 import com.studyhelper.jpa.GroupRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,21 +21,21 @@ public class GroupServiceImpl implements GroupService{
     private final GroupConverter groupConverter;
 
     @Override
-    public Groupperson findByName(String name) throws NameNotFoundException {
+    public EducationalGroup findByName(String name) throws NameNotFoundException {
         return groupRepository.findByName(name)
                 .orElseThrow(()-> new UsernameNotFoundException("group doesn't exist"));
     }
 
     @Override
     public Long create(GroupForm groupForm) {
-        Groupperson groupperson =groupConverter
+        EducationalGroup educationalGroup =groupConverter
                 .groupConverter()
                 .convert(groupForm);
 
-        if (groupperson == null) {
+        if (educationalGroup == null) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Group not converted");
         }
-        return groupRepository.save(groupperson).getId();
+        return groupRepository.save(educationalGroup).getId();
     }
 
 }

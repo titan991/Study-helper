@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -17,15 +16,14 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Table
-public class Student extends BaseIdEntity {
+public class Teacher extends BaseIdEntity {
+
+  private String post;
+
+  @ManyToOne
+  private Department department;
 
   @ManyToOne
   private Person person;
-
-  @Column(name = "record_book_number")
-  private String recordBookNumber;
-
-  @ManyToOne
-  private EducationalGroup group;
 
 }

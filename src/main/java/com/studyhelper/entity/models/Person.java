@@ -1,10 +1,8 @@
 package com.studyhelper.entity.models;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.studyhelper.entity.models.common.BaseIdEntity;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -12,15 +10,13 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
 
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table
-public class Person implements UserDetails {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Person extends BaseIdEntity implements UserDetails {
 
     @Column(unique = true)
     private String username;
@@ -28,8 +24,8 @@ public class Person implements UserDetails {
     @Column
     private String password;
 
-    @Column
-    private String fullname;
+    @Column(name = "full_name")
+    private String fullName;
 
     @Column
     private Role role;

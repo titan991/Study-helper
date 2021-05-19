@@ -1,11 +1,11 @@
 package com.studyhelper.service;
 
 import com.studyhelper.entity.form.GroupForm;
-import com.studyhelper.entity.models.Groupperson;
+import com.studyhelper.entity.models.EducationalGroup;
 
 import javax.naming.NameNotFoundException;
 
 public interface GroupService {
-    Groupperson findByName(String name) throws NameNotFoundException;
+    EducationalGroup findByName(String name) throws NameNotFoundException;
     Long create(GroupForm groupForm);
 }
