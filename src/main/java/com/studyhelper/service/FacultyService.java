@@ -1,11 +1,10 @@
 package com.studyhelper.service;
 
-import com.studyhelper.entity.form.FacultyForm;
 import com.studyhelper.entity.models.Faculty;
 
-import javax.naming.NameNotFoundException;
+import java.util.List;
 
 public interface FacultyService {
-    Faculty findByName(String name) throws NameNotFoundException;
-    Long create(FacultyForm facultyForm);
+    List<Faculty> findAll();
+
 }
