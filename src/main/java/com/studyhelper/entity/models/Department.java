@@ -19,6 +19,9 @@ public class Department extends BaseIdEntity {
     @Column
     private String name;
 
+    @Column
+    private String abbreviation;
+
     @ManyToOne
     private Faculty faculty;
 
