@@ -11,4 +11,5 @@ public class GroupForm {
     private Integer course;
     private LocalDate startStudies;
     private LocalDate endStudies;
+    private Long departmentId;
 }

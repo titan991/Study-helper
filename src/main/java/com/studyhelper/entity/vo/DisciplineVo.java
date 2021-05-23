@@ -1,11 +1,13 @@
-package com.studyhelper.entity.form;
+package com.studyhelper.entity.vo;
 
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
-public class SubjectForm {
+public class DisciplineVo {
     private Long id;
     private String nameSubject;
     private Integer semester;
-    private Long educationalGroupId;
+
 }

@@ -22,7 +22,7 @@ public class Lesson extends BaseIdEntity {
     private LocalDate date;
 
     @ManyToOne
-    private Subject subject;
+    private Discipline discipline;
 
     @Column
     private TypeOfLesson typeOfLesson;

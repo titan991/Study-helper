@@ -1,9 +1,8 @@
 package com.studyhelper.controller;
 
 import com.studyhelper.entity.converter.SubjectConverter;
-import com.studyhelper.entity.form.SubjectForm;
-import com.studyhelper.entity.vo.DepartmentVo;
-import com.studyhelper.entity.vo.SubjectVo;
+import com.studyhelper.entity.form.DisciplineForm;
+import com.studyhelper.entity.vo.DisciplineVo;
 import com.studyhelper.service.SubjectService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +18,13 @@ public class SubjectController {
     private final SubjectConverter subjectConverter;
 
     @PostMapping("")
-    public Long create(@RequestBody SubjectForm subjectForm) {
-        return subjectService.create(subjectForm);
+    public Long create(@RequestBody DisciplineForm disciplineForm) {
+        return subjectService.create(disciplineForm);
     }
 
     @PutMapping("")
-    public Long update(@RequestBody SubjectForm subjectForm) {
-        return subjectService.update(subjectForm);
+    public Long update(@RequestBody DisciplineForm disciplineForm) {
+        return subjectService.update(disciplineForm);
     }
 
     @DeleteMapping("/{id}")
@@ -34,7 +33,7 @@ public class SubjectController {
     }
 
     @GetMapping("/{id}")
-    public SubjectVo getById(@PathVariable Long id) {
+    public DisciplineVo getById(@PathVariable Long id) {
         var subject = subjectService.findByIdNN(id);
 
         return subjectConverter.subjectVoConverter().convert(subject);
@@ -42,7 +41,7 @@ public class SubjectController {
     }
 
     @GetMapping("")
-    public List<SubjectVo> getAll() {
+    public List<DisciplineVo> getAll() {
         var subjects = subjectService.findAll();
 
         return subjects.stream()

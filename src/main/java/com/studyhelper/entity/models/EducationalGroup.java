@@ -33,9 +33,6 @@ public class EducationalGroup extends BaseIdEntity {
     @ManyToOne
     private Department department;
 
-    @OneToMany(mappedBy = "educational_group")
+    @OneToMany(mappedBy = "group")
     private List<Student> students;
-
-    @OneToMany(mappedBy = "educational_group")
-    private List<Subject>subjects;
 }

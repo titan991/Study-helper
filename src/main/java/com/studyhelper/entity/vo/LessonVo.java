@@ -1,6 +1,5 @@
 package com.studyhelper.entity.vo;
 
-import com.studyhelper.entity.models.Subject;
 import com.studyhelper.entity.models.TypeOfLesson;
 import lombok.Builder;
 import lombok.Data;
