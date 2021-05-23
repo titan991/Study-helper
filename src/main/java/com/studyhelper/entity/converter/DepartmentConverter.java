@@ -1,6 +1,5 @@
 package com.studyhelper.entity.converter;
 
-import com.studyhelper.entity.form.DepartmentForm;
 import com.studyhelper.entity.models.Department;
 import com.studyhelper.entity.vo.DepartmentVo;
 import org.springframework.core.convert.converter.Converter;

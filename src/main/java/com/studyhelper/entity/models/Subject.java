@@ -15,17 +15,16 @@ import java.util.List;
 @Setter
 @Entity
 @Table
-public class Student extends BaseIdEntity {
+public class Subject extends BaseIdEntity {
+    @Column(name = "name_subject")
+    private String nameSubject;
 
-  @ManyToOne
-  private Person person;
+    @Column
+    private Integer semester;
 
-  @Column(name = "record_book_number")
-  private String recordBookNumber;
+    @OneToMany(mappedBy = "subject")
+    private List<EducationalGroup> educationalGroups;
 
-  @ManyToOne
-  private EducationalGroup group;
-
-  @OneToMany(mappedBy = "student")
-  private List<StudentLesson>studentLessons;
+    @OneToMany(mappedBy = "subject")
+    private List<Lesson> lessons;
 }

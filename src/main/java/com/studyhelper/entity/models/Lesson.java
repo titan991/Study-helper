@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -15,17 +16,17 @@ import java.util.List;
 @Setter
 @Entity
 @Table
-public class Student extends BaseIdEntity {
+public class Lesson extends BaseIdEntity {
 
-  @ManyToOne
-  private Person person;
+    @Column
+    private LocalDate date;
 
-  @Column(name = "record_book_number")
-  private String recordBookNumber;
+    @ManyToOne
+    private Subject subject;
 
-  @ManyToOne
-  private EducationalGroup group;
+    @Column
+    private TypeOfLesson typeOfLesson;
 
-  @OneToMany(mappedBy = "student")
-  private List<StudentLesson>studentLessons;
+    @OneToMany(mappedBy = "lesson")
+    private List<StudentLesson> studentLessons;
 }

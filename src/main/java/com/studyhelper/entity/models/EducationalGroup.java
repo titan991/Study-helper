@@ -9,7 +9,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -34,6 +33,9 @@ public class EducationalGroup extends BaseIdEntity {
     @ManyToOne
     private Department department;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "educational_group")
     private List<Student> students;
+
+    @OneToMany(mappedBy = "educational_group")
+    private List<Subject>subjects;
 }

@@ -2,12 +2,9 @@ package com.studyhelper.controller;
 
 import com.studyhelper.entity.converter.FacultyConverter;
 import com.studyhelper.entity.form.FacultyForm;
-import com.studyhelper.entity.models.Faculty;
 import com.studyhelper.entity.vo.FacultyVo;
-import com.studyhelper.exceptions.ResponseException;
 import com.studyhelper.service.FacultyService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

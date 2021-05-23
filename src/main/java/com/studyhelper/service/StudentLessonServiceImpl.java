@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
-public class GroupServiceImpl implements GroupService{
+public class StudentLessonServiceImpl implements StudentLessonService{
 }
