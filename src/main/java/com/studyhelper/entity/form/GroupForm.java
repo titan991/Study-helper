@@ -7,6 +7,7 @@ import java.util.Date;
 
 @Data
 public class GroupForm {
+    private Long id;
     private String name;
     private Integer course;
     private LocalDate startStudies;

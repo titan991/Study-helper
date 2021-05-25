@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
-@RequestMapping("/department")
+@RequestMapping("/auth/department")
 @RestController
 public class DepartmentController {
 

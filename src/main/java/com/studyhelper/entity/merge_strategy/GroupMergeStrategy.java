@@ -25,5 +25,8 @@ public class GroupMergeStrategy {
 
     return group;
   }
-
+  public EducationalGroup update(EducationalGroup educationalGroup, GroupForm groupForm) {
+    educationalGroup.setName(groupForm.getName());
+    return educationalGroup;
+  }
 }

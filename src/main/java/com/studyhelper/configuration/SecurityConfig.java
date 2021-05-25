@@ -26,19 +26,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       http.csrf().disable()
           .userDetailsService(userDetailsService)
           .authorizeRequests()
-          .antMatchers(HttpMethod.GET, "/faculty").permitAll()
-          .antMatchers(HttpMethod.POST, "/person").permitAll()
+          .antMatchers("/").permitAll()
+//          .anyRequest()
+//          .authenticated()
           .and()
-          .authorizeRequests()
-          .anyRequest().authenticated()
-//          .and()
-//          .logout()
-//          .logoutRequestMatcher(new AntPathRequestMatcher("/logout","POST"))
-//          .invalidateHttpSession(true)
-//          .clearAuthentication(true)
-//          .deleteCookies("JSESSIONID")
-//          .logoutSuccessUrl("/login")
-          .and().httpBasic();
+          .formLogin()
+          .loginPage("/login").permitAll()
+          .defaultSuccessUrl("/")
+          .and()
+          .logout()
+          .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout","POST"))
+          .invalidateHttpSession(true)
+          .clearAuthentication(true)
+          .deleteCookies("JSESSIONID")
+          .logoutSuccessUrl("/login");
   }
 
   @Bean

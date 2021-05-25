@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@RequestMapping("/faculty")
+@RequestMapping("/auth/faculty")
 @RestController
 @AllArgsConstructor
 public class FacultyController {

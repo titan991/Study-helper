@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
-@RequestMapping("/lesson")
+@RequestMapping("/auth/lesson")
 @RestController
 public class LessonController {
 

@@ -41,7 +41,7 @@ public class FacultyServiceImpl implements FacultyService{
         var faculty = converter.facultyFormConverter().convert(facultyForm);
 
         if (faculty == null) {
-            throw new ResponseException(HttpStatus.I_AM_A_TEAPOT, "My name is Nikita");
+            throw new ResponseException(HttpStatus.I_AM_A_TEAPOT, "faculty not found");
         }
 
         return facultyRepository.save(faculty).getId();

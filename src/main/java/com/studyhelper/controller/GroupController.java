@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
-@RequestMapping("/group")
+@RequestMapping("/auth/group")
 @RestController
 public class GroupController {
 

@@ -1,5 +1,6 @@
 package com.studyhelper.service;
 
+import com.studyhelper.entity.converter.LessonConverter;
 import com.studyhelper.entity.form.LessonForm;
 import com.studyhelper.entity.models.Lesson;
 import com.studyhelper.exceptions.ResponseException;
@@ -15,6 +16,8 @@ import java.util.List;
 public class LessonServiceImpl implements LessonService{
 
   private final LessonRepository lessonRepository;
+  private final LessonConverter lessonConverter;
+
 
   @Override
   public List<Lesson> findAll() {
@@ -29,7 +32,12 @@ public class LessonServiceImpl implements LessonService{
 
   @Override
   public Long create(LessonForm form) {
-    return LessonService.super.create(form);
+    var lesson=lessonConverter.LessonFormConverter().convert(form);
+
+    if(lesson==null){
+      throw new ResponseException(HttpStatus.I_AM_A_TEAPOT, "Lesson not found");
+    }
+    return lessonRepository.save(lesson).getId();
   }
 
   @Override
@@ -38,7 +46,6 @@ public class LessonServiceImpl implements LessonService{
   }
 
   @Override
-  public void deleteById(Long id) {
-    LessonService.super.deleteById(id);
+  public void deleteById(Long id) { lessonRepository.deleteById(id);
   }
 }

@@ -28,6 +28,7 @@ public class Person extends BaseIdEntity implements UserDetails {
     private String fullName;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @Override
