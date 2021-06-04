@@ -20,4 +20,7 @@ public class Faculty extends BaseIdEntity {
 
     @OneToMany(mappedBy = "faculty")
     private List<Department> departments;
+
+    @OneToMany(mappedBy = "faculty")
+    private List<EducationalGroup> groups;
 }

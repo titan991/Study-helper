@@ -25,6 +25,7 @@ public class Lesson extends BaseIdEntity {
     private Discipline discipline;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private TypeOfLesson typeOfLesson;
 
     @OneToMany(mappedBy = "lesson")

@@ -3,6 +3,7 @@ package com.studyhelper.entity.merge_strategy;
 import com.studyhelper.entity.form.GroupForm;
 import com.studyhelper.entity.models.EducationalGroup;
 import com.studyhelper.jpa.DepartmentRepository;
+import com.studyhelper.jpa.FacultyRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GroupMergeStrategy {
 
-  private final DepartmentRepository departmentRepository;
+  private final FacultyRepository facultyRepository;
 
   public EducationalGroup create (GroupForm form) {
     var group =  new EducationalGroup();
@@ -19,8 +20,8 @@ public class GroupMergeStrategy {
     group.setEndStudies(form.getEndStudies());
     group.setStartStudies(form.getStartStudies());
     group.setCourse(form.getCourse());
-    group.setDepartment(departmentRepository
-        .findById(form.getDepartmentId())
+    group.setFaculty(facultyRepository
+        .findById(form.getFacultyId())
         .orElse(null));
 
     return group;

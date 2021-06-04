@@ -24,9 +24,4 @@ public class Department extends BaseIdEntity {
     @ManyToOne
     private Faculty faculty;
 
-    @OneToMany(mappedBy = "department")
-    private List<EducationalGroup> groups;
-
-    @OneToMany(mappedBy = "department")
-    private List<Teacher> teachers;
 }

@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/auth/person")
 @AllArgsConstructor
 public class PersonController {
 

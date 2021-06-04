@@ -31,7 +31,7 @@ public class EducationalGroup extends BaseIdEntity {
     private LocalDate endStudies;
 
     @ManyToOne
-    private Department department;
+    private Faculty faculty;
 
     @OneToMany(mappedBy = "group")
     private List<Student> students;
